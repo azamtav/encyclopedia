@@ -1,7 +1,4 @@
-encyclopedia
-============
-
-205 Encyclopedia Construction
+# Encyclopedia Construction
 
 http://rubyquiz.strd6.com/quizzes/205-encyclopedia-construction
 
