@@ -12,11 +12,6 @@ describe WordParser do
 		it "should not be empty" do
 			@words.size.should > 0
 		end
-		it "should lowercase all words" do
-			@words.each do |word|
-				word.should == word.downcase
-			end
-		end
 		it "should not have any spaces in each word" do
 			@words.each do |word|
 				word.scan(/\s+/).size.should == 0
@@ -25,7 +20,7 @@ describe WordParser do
 		it "should sort the words" do
 			@words.each_with_index do |val, index| 
 				if index + 1 < @words.size
-					@words[index].should < @words[index + 1]
+					@words[index].downcase.should < @words[index + 1].downcase
 				end
 			end
 		end
