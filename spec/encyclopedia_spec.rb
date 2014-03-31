@@ -69,6 +69,7 @@ describe Encyclopedia do
 
 	describe "#merge" do
 		subject(:mergedVolumes) { @enc.merge() }
+		subject(:originalVolumes) { @enc.volumes }
 		it "should return a hash of volumes sorted" do
 			prevKey = nil
 			mergedVolumes.each do |key, value|
@@ -103,6 +104,14 @@ describe Encyclopedia do
 		end
 		it "should contain the desired number of volumes" do
 			mergedVolumes.keys.size.should == @desiredVolumes
+		end
+		it "should contain words in the key range" do
+			mergedVolumes.each do |key, value|
+				keyRange = Range.new(key[0], key[-1])
+				value.each do |word|
+					keyRange.include?(word[0].downcase).should == true
+				end
+			end
 		end
 	end
 end

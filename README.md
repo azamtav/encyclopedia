@@ -33,7 +33,7 @@ ruby BuildEncyclopedia.rb
 ```
 
 ## Tests:
-The spec folder contains the test files for their appropriate classes. They are coded using **RSpec gem (2.1.47)**.
+The spec folder contains the test files for their appropriate classes. They are coded using **RSpec gem (2.14.7)**.
 
 To run the test:
 ````
