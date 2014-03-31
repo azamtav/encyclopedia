@@ -3,12 +3,12 @@ require_relative "spec_helper"
 describe Encyclopedia do
 
 	before :all do
-		@words = WordParser.parse('words.txt')
+		@words = WordParser.parse('words.txt')		
+		@desiredVolumes = 10
 		@randomVolume = {"a" => ["apple", "ace", "adventure"], "b" => ["banana", "boy", "brash"], "c" => ["cat", "cobweb", "candy", "cream", "caterpillar"]}
 	end
 
 	before :each do
-		@desiredVolumes = 10
 		@enc = Encyclopedia.new(@words, @desiredVolumes)
 	end
 
@@ -68,7 +68,7 @@ describe Encyclopedia do
 	end
 
 	describe "#merge" do
-		subject(:mergedVolumes) { @enc.merge(@enc.volumes) }
+		subject(:mergedVolumes) { @enc.merge() }
 		it "should return a hash of volumes sorted" do
 			prevKey = nil
 			mergedVolumes.each do |key, value|
@@ -104,6 +104,5 @@ describe Encyclopedia do
 		it "should contain the desired number of volumes" do
 			mergedVolumes.keys.size.should == @desiredVolumes
 		end
-
 	end
 end
