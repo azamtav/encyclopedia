@@ -25,7 +25,9 @@ ape apple apricot aquamarine architect artichoke azure baboon badger banana bat 
 
 ## Solution
 
-I created a solution to the problem by sorting the words into an array using the WordParser class. I took this word array and grouped them into a Hash beginning with the first letter of the array. I then merged letters together based on the letters that merged into the smallest volume until the volumes reached the desired amount.
+I created a solution to the problem by first sorting all the words into an array using the WordParser class. Next, I provided the array to the Encyclopeida class. This class takes the words array and puts them into a hash starting with the first letter (downcase).
+
+I then took this hash and started merging key/value neighbors that formed the smallest merged volume. I continued to merge until I reached the desired number of volumes.
 
 ## Example usage:
 ```
